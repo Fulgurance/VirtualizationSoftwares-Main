@@ -21,7 +21,22 @@
     }
   ],
   "kernelDependencies": [],
-  "options": [],
+  "options": [
+    {
+      "name": "Sdl2",
+      "description": "Enable sdl2 support",
+      "active": true,
+      "dependencies": [
+        {
+          "port": "GraphicsLibraries-Main",
+          "name": "Sdl2",
+          "version": ">=2.28.2",
+          "options": []
+        }
+      ],
+      "kernelDependencies": []
+    }
+  ],
   "uniqueDependencies": [],
   "uniqueOptions": [],
   "selectedDependencies": [],
