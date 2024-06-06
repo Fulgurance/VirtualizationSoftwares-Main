@@ -3,8 +3,7 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource( [  "--prefix=/usr",
-                            "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}"],
+        configureSource( [  "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}"],
                             path: buildDirectoryPath)
     end
 
