@@ -3,7 +3,8 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource( [  "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}"],
+        configureSource( [  "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}",
+                            "--with-qt-dir=/usr/lib/qt5"],
                             path: buildDirectoryPath)
     end
 
