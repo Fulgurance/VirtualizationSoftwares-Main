@@ -24,6 +24,12 @@
       "name": "Libidl",
       "version": ">=0.8.14",
       "options": []
+    },
+    {
+      "port": "GraphicsLibraries-Main",
+      "name": "Glu",
+      "version": ">=9.0.3",
+      "options": []
     }
   ],
   "kernelDependencies": [],
