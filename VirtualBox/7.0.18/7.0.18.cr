@@ -19,4 +19,10 @@ class Target < ISM::Software
         makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
     end
 
+    def showInformations
+        super
+
+        showInfo("After the installation, if you wish a user able to use Virtualbox, add it in the vboxusers system group")
+    end
+
 end
