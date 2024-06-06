@@ -1,0 +1,23 @@
+{
+  "port": "VirtualizationSoftwares-Main",
+  "name": "VirtualBox",
+  "version": "7.0.18",
+  "architectures": ["x86_64"],
+  "description": "Powerful x86 and AMD64/Intel64 virtualization product for enterprise as well as home use",
+  "website": "https://www.virtualbox.org/",
+  "installedFiles": [],
+  "dependencies": [
+    {
+      "port": "SystemBase-Main",
+      "name": "SystemBase",
+      "version": ">=0.2.0",
+      "options": []
+    }
+  ],
+  "kernelDependencies": [],
+  "options": [],
+  "uniqueDependencies": [],
+  "uniqueOptions": [],
+  "selectedDependencies": [],
+  "allowCodependencies": []
+}
