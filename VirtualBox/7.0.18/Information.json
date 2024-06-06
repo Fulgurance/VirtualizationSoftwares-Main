@@ -12,6 +12,12 @@
       "name": "Acpica",
       "version": ">=0.0.0-20240322",
       "options": []
+    },
+    {
+      "port": "BaseLibraries-Main",
+      "name": "Libidl",
+      "version": ">=0.8.14",
+      "options": []
     }
   ],
   "kernelDependencies": [],
