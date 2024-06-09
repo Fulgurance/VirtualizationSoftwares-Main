@@ -48,12 +48,6 @@
       "name": "Makeself",
       "version": ">=2.5.0",
       "options": []
-    },
-    {
-      "port": "ProgrammingTools-Main",
-      "name": "KBuild",
-      "version": ">=0.1.5-p.2",
-      "options": []
     }
   ],
   "kernelDependencies": [],

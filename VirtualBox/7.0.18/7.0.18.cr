@@ -12,7 +12,7 @@ class Target < ISM::Software
     def build
         super
 
-        runKmkCommand(path: buildDirectoryPath)
+        #runKmkCommand(path: buildDirectoryPath)
     end
     
     def prepareInstallation
