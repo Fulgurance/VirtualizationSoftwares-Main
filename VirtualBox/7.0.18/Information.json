@@ -42,6 +42,12 @@
       "name": "Libvpx",
       "version": ">=1.13.0",
       "options": []
+    },
+    {
+      "port": "Archivers-Main",
+      "name": "Makeself",
+      "version": ">=2.5.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
