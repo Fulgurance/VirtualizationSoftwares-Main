@@ -51,7 +51,7 @@
     },
     {
       "port": "ProgrammingTools-Main",
-      "name": "Kbuild",
+      "name": "KBuild",
       "version": ">=0.1.5-p.2",
       "options": []
     }
