@@ -12,13 +12,14 @@ class Target < ISM::Software
     def build
         super
 
-        makeSource(path: buildDirectoryPath)
+        runKmkCommand(path: buildDirectoryPath)
     end
     
     def prepareInstallation
         super
 
-        makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
+        exit 1
+        #makeSource(["DESTDIR=#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}","install"],buildDirectoryPath)
     end
 
     def showInformations
