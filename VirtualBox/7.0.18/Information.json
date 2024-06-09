@@ -30,6 +30,12 @@
       "name": "Glu",
       "version": ">=9.0.3",
       "options": []
+    },
+    {
+      "port": "ProgrammingTools-Main",
+      "name": "Yasm",
+      "version": ">=1.3.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
