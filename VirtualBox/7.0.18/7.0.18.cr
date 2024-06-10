@@ -12,7 +12,8 @@ class Target < ISM::Software
     def build
         super
 
-        #runKmkCommand(path: buildDirectoryPath)
+        runFile("kBuild/bin/linux.amd64/kmk",
+                path: mainWorkDirectoryPath)
     end
     
     def prepareInstallation
