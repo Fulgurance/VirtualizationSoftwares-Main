@@ -3,17 +3,16 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource( [  "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}",
-                            #For full 64 bits
-                            "--disable-vmmraw"],
-                            path: buildDirectoryPath)
+        configureSource(arguments:  "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}   \
+                                    --disable-vmmraw",#For full 64 bits
+                        path:       buildDirectoryPath)
     end
 
     def build
         super
 
-        runFile("kBuild/bin/linux.amd64/kmk",
-                path: mainWorkDirectoryPath)
+        runFile(file:   "kBuild/bin/linux.amd64/kmk",
+                path:   mainWorkDirectoryPath)
     end
     
     def prepareInstallation
