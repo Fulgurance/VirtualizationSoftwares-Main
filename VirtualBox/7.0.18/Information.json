@@ -48,6 +48,12 @@
       "name": "Makeself",
       "version": ">=2.5.0",
       "options": []
+    },
+    {
+      "port": "GraphicsLibraries-Main",
+      "name": "Glslang",
+      "version": ">=14.2.0",
+      "options": []
     }
   ],
   "kernelDependencies": [],
@@ -55,7 +61,7 @@
     {
       "name": "Sdl2",
       "description": "Enable sdl2 support",
-      "active": true,
+      "active": false,
       "dependencies": [
         {
           "port": "GraphicsLibraries-Main",
