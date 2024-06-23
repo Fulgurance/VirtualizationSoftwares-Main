@@ -4,6 +4,7 @@ class Target < ISM::Software
         super
 
         configureSource(arguments:  "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}   \
+                                    --disable-docs                                          \
                                     --disable-vmmraw",#For full 64 bits
                         path:       buildDirectoryPath)
     end
