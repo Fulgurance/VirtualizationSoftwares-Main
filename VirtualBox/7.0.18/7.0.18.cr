@@ -23,7 +23,7 @@ class Target < ISM::Software
         VBOX_WITH_TESTCASES :=
         VBOX_WITH_TESTSUITE :=
         CODE
-        fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}etc/bashrc",localConfigKmkData)
+        fileWriteData("#{mainWorkDirectoryPath}/LocalConfig.kmk",localConfigKmkData)
 
         runFile(file:                   "kBuild/bin/linux.amd64/kmk all",
                 path:                   mainWorkDirectoryPath,
