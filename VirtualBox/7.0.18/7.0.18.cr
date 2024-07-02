@@ -91,7 +91,7 @@ class Target < ISM::Software
                                     #"libvboxjxpcom.so", ?
                                     #"vbox-img", ?
                                     "vboximg-mount",
-                                    "vboxwebsrv",
+                                    #"vboxwebsrv", ?
 
                                     "vboxshell.py",
                                     "vboxdrv.sh",
