@@ -112,7 +112,7 @@ class Target < ISM::Software
                                 "virtualbox",
                                 "virtualboxvm"]
 
-        moduleDirectory = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/lib/modules/#{mainKernelVersion}"
+        moduleDirectory = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/lib/modules/6.9.0"
 
         makeDirectory(moduleDirectory)
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
@@ -125,15 +125,15 @@ class Target < ISM::Software
 
         #Generate temporary symlink for kernel module installation (temporary: need to target /lib/modules/kernelversion/*)
 
-        makeLink(   target: "/usr/src/main-kernel-sources/modules.order",
+        makeLink(   target: "/lib/modules/6.9.0/modules.order",
                     path:   "#{moduleDirectory}/modules.order",
                     type:   :symbolicLinkByOverwrite)
 
-        makeLink(   target: "/usr/src/main-kernel-sources/modules.builtin",
+        makeLink(   target: "/lib/modules/6.9.0/modules.builtin",
                     path:   "#{moduleDirectory}/modules.builtin",
                     type:   :symbolicLinkByOverwrite)
 
-        makeLink(   target: "/usr/src/main-kernel-sources/modules.builtin.modinfo",
+        makeLink(   target: "/lib/modules/6.9.0/modules.builtin.modinfo",
                     path:   "#{moduleDirectory}/modules.builtin.modinfo",
                     type:   :symbolicLinkByOverwrite)
 
