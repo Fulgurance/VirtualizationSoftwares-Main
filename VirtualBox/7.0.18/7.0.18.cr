@@ -3,9 +3,9 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(arguments:  "#{option("Sdl2") ? "--enable-sdl" : "--disable-sdl"}   \
-                                    --disable-java                                          \
-                                    --disable-docs                                          \
+        configureSource(arguments:  "#{option("Sdl2") ? "--enable-sdl-ttf" : "--disable-sdl-ttf"}   \
+                                    --disable-java                                                  \
+                                    --disable-docs                                                  \
                                     --disable-vmmraw",#For full 64 bits
                         path:       buildDirectoryPath)
     end
