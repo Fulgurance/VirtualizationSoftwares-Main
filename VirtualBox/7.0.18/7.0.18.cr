@@ -3,7 +3,7 @@ class Target < ISM::Software
     def configure
         super
 
-        configureSource(arguments:  "#{option("Sdl2") ? "" : "--disable-sdl-ttf"}   \
+        configureSource(arguments:  "#{option("Sdl2") ? "" : "--disable-sdl"}   \
                                     --disable-java                                                  \
                                     --disable-docs                                                  \
                                     --disable-vmmraw",#For full 64 bits
