@@ -206,6 +206,12 @@ class Target < ISM::Software
         SUBSYSTEM=="usb", ACTION=="remove", ENV{DEVTYPE}=="usb_device", RUN="/usr/lib/udev/VBoxCreateUSBNode.sh --remove $major $minor"
         CODE
         fileWriteData("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/lib/udev/rules.d/10-virtualbox.rules",udevData)
+
+        #Delete generated temporary symlink for kernel module installation
+
+        deleteFile("#{moduleDirectory}/modules.order")
+        deleteFile("#{moduleDirectory}/modules.builtin")
+        deleteFile("#{moduleDirectory}/modules.builtin.modinfo")
     end
 
     def showInformations
