@@ -70,8 +70,8 @@ class Target < ISM::Software
                                     "VBoxNetNAT",
                                     "VBoxNetNAT.so",
                                     "VBoxRT.so",
-                                    "VBoxSDL",
-                                    "VBoxSDL.so",
+                                    #"VBoxSDL",     #NEED SDL
+                                    #"VBoxSDL.so",  #NEED SDL
                                     "VBoxSVC",
                                     "VBoxSVGA3D.so",
                                     "VBoxSharedClipboard.so",
@@ -98,7 +98,7 @@ class Target < ISM::Software
                                 "VBoxBugReport",
                                 "VBoxHeadless",
                                 "VBoxManage",
-                                "VBoxSDL",
+                                #"VBoxSDL",#NEED SDL
                                 "VBoxVRDP",
                                 "VirtualBox",
                                 "VirtualBoxVM",
