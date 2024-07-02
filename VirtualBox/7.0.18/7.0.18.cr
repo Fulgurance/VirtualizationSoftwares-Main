@@ -123,20 +123,22 @@ class Target < ISM::Software
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/share/virtualbox")
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/share/applications")
 
-        #Generate temporary symlink for kernel module installation
-        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.order",
+        #Generate temporary symlink for kernel module installation (temporary: need to target /lib/modules/kernelversion/*)
+
+        makeLink(   target: "/usr/src/main-kernel-sources/modules.order",
                     path:   "#{moduleDirectory}/modules.order",
                     type:   :symbolicLinkByOverwrite)
 
-        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.builtin",
+        makeLink(   target: "/usr/src/main-kernel-sources/modules.builtin",
                     path:   "#{moduleDirectory}/modules.builtin",
                     type:   :symbolicLinkByOverwrite)
 
-        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.builtin.modinfo",
+        makeLink(   target: "/usr/src/main-kernel-sources/modules.builtin.modinfo",
                     path:   "#{moduleDirectory}/modules.builtin.modinfo",
                     type:   :symbolicLinkByOverwrite)
 
         #Prepare kernel module installation
+
         makeSource( arguments:      "install",
                     path:           "#{mainWorkDirectoryPath}/out/linux.amd64/release/bin/src",
                     environment:    {"INSTALL_MOD_PATH" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
