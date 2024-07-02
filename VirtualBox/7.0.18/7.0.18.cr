@@ -40,7 +40,7 @@ class Target < ISM::Software
                                     "ExtensionPacks",
                                     "sdk",
                                     "UICommon.so",
-                                    "VBox",
+                                    "VBox.sh",
                                     "VBoxAuth.so",
                                     "VBoxAuthSimple.so",
                                     "VBoxAutostart",
@@ -132,7 +132,7 @@ class Target < ISM::Software
                     path:   "#{moduleDirectory}/modules.builtin",
                     type:   :symbolicLinkByOverwrite)
 
-        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.builtin",
+        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.builtin.modinfo",
                     path:   "#{moduleDirectory}/modules.builtin.modinfo",
                     type:   :symbolicLinkByOverwrite)
 
@@ -179,7 +179,7 @@ class Target < ISM::Software
 
         virtualboxSymlinks.each do |filename|
 
-            makeLink(   target: "/usr/lib/virtualbox/VBox",
+            makeLink(   target: "/usr/lib/virtualbox/VBox.sh",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/#{filename}",
                         type:   :symbolicLinkByOverwrite)
 
