@@ -88,10 +88,14 @@ class Target < ISM::Software
                                     "VirtualBox",
                                     "VirtualBoxVM",
                                     "VirtualBoxVM.so",
-                                    "libvboxjxpcom.so",
-                                    "vbox-img",
+                                    #"libvboxjxpcom.so", ?
+                                    #"vbox-img", ?
                                     "vboximg-mount",
-                                    "vboxwebsrv"]
+                                    "vboxwebsrv",
+
+                                    "vboxshell.py",
+                                    "vboxdrv.sh",
+                                    "vboxweb-service.sh"]
 
         virtualboxSymlinks = [  "VBoxAutostart",
                                 "VBoxBalloonCtrl",
@@ -112,7 +116,7 @@ class Target < ISM::Software
                                 "virtualbox",
                                 "virtualboxvm"]
 
-        moduleDirectory = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/lib/modules/6.9.0"
+        moduleDirectory = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/lib/modules/#{mainKernelVersion}"
 
         makeDirectory(moduleDirectory)
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin")
@@ -125,15 +129,15 @@ class Target < ISM::Software
 
         #Generate temporary symlink for kernel module installation (temporary: need to target /lib/modules/kernelversion/*)
 
-        makeLink(   target: "/lib/modules/6.9.0/modules.order",
+        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.order",
                     path:   "#{moduleDirectory}/modules.order",
                     type:   :symbolicLinkByOverwrite)
 
-        makeLink(   target: "/lib/modules/6.9.0/modules.builtin",
+        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.builtin",
                     path:   "#{moduleDirectory}/modules.builtin",
                     type:   :symbolicLinkByOverwrite)
 
-        makeLink(   target: "/lib/modules/6.9.0/modules.builtin.modinfo",
+        makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.builtin.modinfo",
                     path:   "#{moduleDirectory}/modules.builtin.modinfo",
                     type:   :symbolicLinkByOverwrite)
 
