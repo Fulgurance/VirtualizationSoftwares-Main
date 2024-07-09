@@ -215,7 +215,7 @@ class Target < ISM::Software
 
         #Delete generated temporary symlink for kernel module installation
 
-        deleteDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/lib")
+        deleteFile("#{moduleDirectory}/modules*")
     end
 
     def showInformations
