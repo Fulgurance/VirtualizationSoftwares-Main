@@ -222,6 +222,12 @@ class Target < ISM::Software
         deleteFile("#{moduleDirectory}/modules.builtin.modinfo")
     end
 
+    def install
+        super
+
+        runDepmodCommand
+    end
+
     def showInformations
         super
 
