@@ -29,7 +29,8 @@ class Target < ISM::Software
                 path:                   mainWorkDirectoryPath,
                 environmentFilePath:    "#{mainWorkDirectoryPath}/env.sh")
 
-        makeSource(path: "#{mainWorkDirectoryPath}/out/linux.amd64/release/bin/src")
+        makeSource( path:                   "#{mainWorkDirectoryPath}/out/linux.amd64/release/bin/src",
+                    environmentFilePath:    "#{mainWorkDirectoryPath}/env.sh")
     end
     
     def prepareInstallation
@@ -127,7 +128,7 @@ class Target < ISM::Software
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/share/virtualbox")
         makeDirectory("#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/share/applications")
 
-        #Generate temporary symlink for kernel module installation (temporary: need to target /lib/modules/kernelversion/*)
+        #Generate temporary symlink for kernel module installation
 
         makeLink(   target: "/lib/modules/#{mainKernelVersion}/modules.order",
                     path:   "#{moduleDirectory}/modules.order",
@@ -143,9 +144,10 @@ class Target < ISM::Software
 
         #Prepare kernel module installation
 
-        makeSource( arguments:      "install",
-                    path:           "#{mainWorkDirectoryPath}/out/linux.amd64/release/bin/src",
-                    environment:    {"INSTALL_MOD_PATH" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"})
+        makeSource( arguments:              "install",
+                    path:                   "#{mainWorkDirectoryPath}/out/linux.amd64/release/bin/src",
+                    environment:            {"INSTALL_MOD_PATH" => "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}"},
+                    environmentFilePath:    "#{mainWorkDirectoryPath}/env.sh")
 
         #Prepare file installation
 
@@ -215,7 +217,9 @@ class Target < ISM::Software
 
         #Delete generated temporary symlink for kernel module installation
 
-        deleteFile("#{moduleDirectory}/modules*")
+        deleteFile("#{moduleDirectory}/modules.order")
+        deleteFile("#{moduleDirectory}/modules.builtin")
+        deleteFile("#{moduleDirectory}/modules.builtin.modinfo")
     end
 
     def showInformations
