@@ -115,8 +115,6 @@ class Target < ISM::Software
                                 "virtualboxvm"]
         if option("Sdl2")
             virtualboxSymlinks.push("VBoxSDL")
-            virtualboxLibFiles.push("VBoxSDL")
-            virtualboxLibFiles.push("VBoxSDL.so")
         end
 
         moduleDirectory = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/lib/modules/#{mainKernelVersion}"
