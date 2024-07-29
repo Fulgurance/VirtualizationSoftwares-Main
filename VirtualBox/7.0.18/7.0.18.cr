@@ -71,8 +71,6 @@ class Target < ISM::Software
                                     "VBoxNetNAT",
                                     "VBoxNetNAT.so",
                                     "VBoxRT.so",
-                                    #"VBoxSDL",     #NEED SDL
-                                    #"VBoxSDL.so",  #NEED SDL
                                     "VBoxSVC",
                                     "VBoxSVGA3D.so",
                                     "VBoxSharedClipboard.so",
@@ -103,7 +101,6 @@ class Target < ISM::Software
                                 "VBoxBugReport",
                                 "VBoxHeadless",
                                 "VBoxManage",
-                                #"VBoxSDL",#NEED SDL
                                 "VBoxVRDP",
                                 "VirtualBox",
                                 "VirtualBoxVM",
@@ -116,6 +113,11 @@ class Target < ISM::Software
                                 "vboxwebsrv",
                                 "virtualbox",
                                 "virtualboxvm"]
+        if option("Sdl2")
+            virtualboxSymlinks.push("VBoxSDL")
+            virtualboxLibFiles.push("VBoxSDL")
+            virtualboxLibFiles.push("VBoxSDL.so")
+        end
 
         moduleDirectory = "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/lib/modules/#{mainKernelVersion}"
 
