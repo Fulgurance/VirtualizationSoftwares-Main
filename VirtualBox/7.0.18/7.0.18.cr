@@ -187,7 +187,7 @@ class Target < ISM::Software
 
         virtualboxSymlinks.each do |filename|
 
-            makeLink(   target: "/usr/lib/virtualbox/VBox.sh",
+            makeLink(   target: "/usr/lib/virtualbox/#{filename}",
                         path:   "#{builtSoftwareDirectoryPath}#{Ism.settings.rootPath}/usr/bin/#{filename}",
                         type:   :symbolicLinkByOverwrite)
 
