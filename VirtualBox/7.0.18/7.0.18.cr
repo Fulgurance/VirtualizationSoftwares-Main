@@ -226,6 +226,8 @@ class Target < ISM::Software
         super
 
         runDepmodCommand
+
+        runChownCommand(":vboxusers /dev/vboxdrv")
     end
 
     def showInformations
