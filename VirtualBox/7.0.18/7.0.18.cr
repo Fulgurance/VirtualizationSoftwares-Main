@@ -14,7 +14,7 @@ class Target < ISM::Software
         super
 
         localConfigKmkData = <<-CODE
-        VBOX_PATH_APP_PRIVATE_ARCH := /usr/lib/virtualbox
+        VBOX_PATH_APP_PRIVATE_ARCH := /usr/lib64/virtualbox
         VBOX_PATH_SHARED_LIBS := $(VBOX_PATH_APP_PRIVATE_ARCH)
         VBOX_WITH_ORIGIN :=
         VBOX_WITH_RUNPATH := $(VBOX_PATH_APP_PRIVATE_ARCH)
