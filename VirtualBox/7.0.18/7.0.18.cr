@@ -227,8 +227,6 @@ class Target < ISM::Software
 
         runDepmodCommand
 
-        runChownCommand("root:vboxusers /dev/vboxdrv")
-        runChmodCommand("g+rw /dev/vboxdrv")
         runChmodCommand("4755 /usr/lib64/VirtualBoxVM")
     end
 
