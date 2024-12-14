@@ -82,16 +82,11 @@ class Target < ISM::Software
                                     "VBoxVolInfo",
                                     "VBoxXPCOM.so",
                                     "VBoxXPCOMC.so",
-                                    "VBoxXPCOMIPCD",
                                     "VMMR0.r0",
                                     "VirtualBox",
                                     "VirtualBoxVM",
                                     "VirtualBoxVM.so",
-                                    #"libvboxjxpcom.so", ?
-                                    #"vbox-img", ?
                                     "vboximg-mount",
-                                    #"vboxwebsrv", ?
-
                                     "vboxshell.py",
                                     "vboxdrv.sh",
                                     "vboxweb-service.sh"]
