@@ -4,6 +4,7 @@ class Target < ISM::Software
         super
 
         configureSource(arguments:  "#{option("Sdl2") ? "" : "--disable-sdl"}   \
+                                    #{option("Qt") ? "" : "--disable-qt"}       \
                                     --disable-java                              \
                                     --disable-docs                              \
                                     --disable-vmmraw",
