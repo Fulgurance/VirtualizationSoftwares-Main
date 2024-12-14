@@ -76,7 +76,6 @@ class Target < ISM::Software
                                     "VBoxSVGA3D.so",
                                     "VBoxSharedClipboard.so",
                                     "VBoxSharedFolders.so",
-                                    "VBoxTestOGL",
                                     "VBoxVMM.so",
                                     "VBoxVMMPreload",
                                     "VBoxVMMPreload.so",
