@@ -78,7 +78,7 @@
       "active": true,
       "dependencies": [
         {
-          "port": "GraphicsLibraries-Main",
+          "port": "QtLibraries-Main",
           "name": "Qtscxml",
           "version": ">=6.0.0 ~ <7.0.0",
           "options": []
