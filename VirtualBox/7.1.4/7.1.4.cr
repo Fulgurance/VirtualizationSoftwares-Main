@@ -82,6 +82,7 @@ class Target < ISM::Software
                                     "VBoxVolInfo",
                                     "VBoxXPCOM.so",
                                     "VBoxXPCOMC.so",
+                                    "VBoxXPCOMIPCD.so",
                                     "VMMR0.r0",
                                     "VirtualBox",
                                     "VirtualBoxVM",
