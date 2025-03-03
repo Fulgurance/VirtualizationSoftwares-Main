@@ -222,8 +222,6 @@ class Target < ISM::Software
         super
 
         runDepmodCommand
-
-        runChmodCommand("4755 /usr/lib64/virtualbox/VirtualBoxVM")
     end
 
     def showInformations
