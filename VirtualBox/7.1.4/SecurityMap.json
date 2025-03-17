@@ -9,5 +9,12 @@
       "directoryMode":  "0755",
 
   },
-  "descriptors": []
+  "descriptors": [
+    {
+      "target": "/usr/lib64/virtualbox/VirtualBoxVM",
+      "user":   "root",
+      "group":  "root",
+      "mode":   "4755"
+    }
+  ]
 }
