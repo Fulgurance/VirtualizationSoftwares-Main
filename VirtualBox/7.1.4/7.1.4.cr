@@ -224,6 +224,13 @@ class Target < ISM::Software
         runDepmodCommand
     end
 
+    def deploy
+        super
+
+        runChownCommand("root:root /usr/lib64/virtualbox/VirtualBoxVM")
+        runChmodCommand("4755 /usr/lib64/virtualbox/VirtualBoxVM")
+    end
+
     def showInformations
         super
 
